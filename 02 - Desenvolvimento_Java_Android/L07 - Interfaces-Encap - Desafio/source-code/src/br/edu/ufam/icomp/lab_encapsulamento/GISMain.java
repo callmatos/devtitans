@@ -5,6 +5,9 @@ import java.util.Vector;
 
 public class GISMain {
 
+    static Localizavel vetorLocalizaveis[] = new Localizavel[9];
+
+
     public static void main(String[] args) {
         
         Posicao ps = new Posicao(-3.160000, -60.120000, 15.0);
@@ -28,7 +31,7 @@ public class GISMain {
 
         
 
-        Localizavel localizaveis [] = {c1,c2,c3,c4,cc1,cc2,cc3,cc4,cc5};
+        vetorLocalizaveis[0] = c1;
 
         // Vector<Localizavel> vetorLocalizaveis = new Vector<>();
         
@@ -40,9 +43,9 @@ public class GISMain {
         // vetorLocalizaveis.add(cc2);
         // vetorLocalizaveis.add(cc3);
 
-        for (int i = 0; i < localizaveis.length; i++) {
+        for (int i = 0; i < vetorLocalizaveis.length; i++) {
             
-            System.out.println(localizaveis[i].getPosicao());
+            System.out.println(vetorLocalizaveis[i].getPosicao());
         }
 
     }

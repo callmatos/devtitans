@@ -32,7 +32,14 @@ public class GISMain {
         
 
         vetorLocalizaveis[0] = c1;
-
+        vetorLocalizaveis[1] = c2;
+        vetorLocalizaveis[2] = c3;
+        vetorLocalizaveis[3] = c4;
+        vetorLocalizaveis[4] = cc1;
+        vetorLocalizaveis[5] = cc2;
+        vetorLocalizaveis[6] = cc3;
+        vetorLocalizaveis[7] = cc4;
+        vetorLocalizaveis[8] = cc5;
         // Vector<Localizavel> vetorLocalizaveis = new Vector<>();
         
         // vetorLocalizaveis.add(c1);

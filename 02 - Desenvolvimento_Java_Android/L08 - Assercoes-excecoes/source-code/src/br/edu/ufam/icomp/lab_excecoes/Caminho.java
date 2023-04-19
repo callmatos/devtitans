@@ -34,13 +34,15 @@ public class Caminho {
         if(tamanhoAux > this.caminho.length){
             throw new TamanhoMaximoExcedidoException();
 
+        }else if(tamanho > 0 && coordenada.distancia(caminho[tamanho - 1]) > 15){
+            throw new DistanciaEntrePontosExcedidaException("A distancia entre pontos nao pode ser maior que 15m!");
         }else{
 
             this.caminho[tamanho] = coordenada;
-            
             this.tamanho++;
 
         }
+
     }
 
     public void reset(){

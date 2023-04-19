@@ -1,6 +1,6 @@
 package br.edu.ufam.icomp.lab_excecoes;
 
-public class MainTeste {
+public class RoverMain {
     
     public static void main(String[] args) {
         
@@ -22,7 +22,19 @@ public class MainTeste {
 
 
         }catch(TamanhoMaximoExcedidoException e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+
+        }catch(DistanciaEntrePontosExcedidaException e){
+            System.out.println(e.getMessage());
+
+        }catch(DigitoInvalidoException e){
+            System.out.println(e.getMessage());
+
+        }catch(CoordenadaForaDosLimitesException e){
+            System.out.println(e.getMessage());
+
+        }catch(CoordenadaNegativaException e){
+            System.out.println(e.getMessage());
 
         }
 

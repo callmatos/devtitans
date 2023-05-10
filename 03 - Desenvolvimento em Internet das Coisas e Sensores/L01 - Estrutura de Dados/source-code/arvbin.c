@@ -65,12 +65,22 @@ void imprime_pos (Arv* a)
   }
 }
 
-Arv* busca (Arv* a, char c){
+Arv* busca (Arv* a, int c){
     
   if (a == NULL) return NULL;
-  else if (a->info > c) return busca(a->esq,c);
   else if (a->info < c) return busca(a->dir,c);
+  else if (a->info > c) return busca(a->esq,c);
   else return a;
+}
+
+
+Arv** busca_ptr (Arv* a, int c){
+    
+  if (a == NULL) return NULL;
+  else if (a->esq != NULL && a->esq->info == c) return &(a->esq);
+  else if (a->dir != NULL && a->dir->info == c) return &(a->dir);
+  else if (a->info < c) return busca(a->dir,c);
+  else if (a->info > c) return busca(a->esq,c);
     
 }
 
@@ -94,10 +104,12 @@ void print_enxerto(Arv* a){
 
 void print_podar(Arv* a){
 
-  // Remove node 34
-  Arv* n34Auxe = busca(a,34);
+  // // Remove node 34
+  // Arv** n34Auxe = busca_ptr(a,34);
   
-  n34Auxe = libera(n34Auxe);
+  // *n34Auxe = libera(*n34Auxe);
+
+  a->esq->dir = libera(a->esq->dir);
 
   imprime_pre(a);
   printf("\n");
@@ -194,5 +206,5 @@ printf("\n");
 printf("Podar the node 34");
 printf("\n");
 print_podar(r45);
-
+  
 }

@@ -79,8 +79,8 @@ Arv** busca_ptr (Arv* a, int c){
   if (a == NULL) return NULL;
   else if (a->esq != NULL && a->esq->info == c) return &(a->esq);
   else if (a->dir != NULL && a->dir->info == c) return &(a->dir);
-  else if (a->info < c) return busca(a->dir,c);
-  else if (a->info > c) return busca(a->esq,c);
+  else if (a->info < c) return busca_ptr(a->dir,c);
+  else if (a->info > c) return busca_ptr(a->esq,c);
     
 }
 
@@ -104,12 +104,10 @@ void print_enxerto(Arv* a){
 
 void print_podar(Arv* a){
 
-  // // Remove node 34
-  // Arv** n34Auxe = busca_ptr(a,34);
+  // Remove node 34
+  Arv** n34Auxe = busca_ptr(a,34);
   
-  // *n34Auxe = libera(*n34Auxe);
-
-  a->esq->dir = libera(a->esq->dir);
+  *n34Auxe = libera(*n34Auxe);
 
   imprime_pre(a);
   printf("\n");
@@ -118,51 +116,6 @@ void print_podar(Arv* a){
   imprime_pos(a);
 
 }
-
-// void remocao(Arv* arvore, int dado){
-//   Arv p,q,rp,f,s;
-
-//   p = *arvore;
-  
-//   while(p != NULL && p->info != dado){
-//     q = p;
-//     if(dado < p->info)
-//       p = p->esq;
-//     else p = p->dir;
-//   }
-//   if(p != NULL){
-//     if (p->esq == NULL)
-//       rp = p->dir;
-//     else if (p->dir == NULL)
-//       rp = p->esq;
-//     else{
-//       f = p;
-//       rp = p->esq;
-//       s = rp->dir;
-//       while(s != NULL){
-//         f = rp;
-//         rp=s;
-//         s = rp->dir;
-//       }
-//       if( f != p){
-//         f->dir = rp->esq;
-//         rp->esq = p->esq;
-//       }
-//       rp->dir = p->dir;
-//     }
-//     if(q == NULL)
-//       *arvore = rp;
-//     else {
-//       if(p == q->esq)
-//         q->esq = rp;
-//       else
-//         q->dir = rp;
-//     }
-//     free(p);
-//   }
-// }
-
-
 
 int main()
 {
@@ -206,5 +159,5 @@ printf("\n");
 printf("Podar the node 34");
 printf("\n");
 print_podar(r45);
-  
+
 }

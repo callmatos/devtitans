@@ -60,6 +60,14 @@ void imprime_in (Arv* r)
 
 void main(void)
 {
+
+  /**
+   * 6) Baixe o código arvbinbusca.c. Implementar uma função que imprima a árvore in-fixada.
+     Implementar uma função main que insira os seguintes elementos 1, 2, 3, 5, 15 e 7. Após cada
+     inserção imprima a árvore. Buscar os elementos 2 e 8, imprimindo na tela se cada elemento foi
+     encontrado ou não.
+  */
+
   Arv* mainNo = NULL;
 
   mainNo = insere(mainNo,1);

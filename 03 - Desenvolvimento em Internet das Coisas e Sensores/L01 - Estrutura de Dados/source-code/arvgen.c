@@ -61,6 +61,12 @@ int busca (ArvGen* a, int c)
 
 int main()
 {
+
+  /**
+   * 5) Baixe o código arvgen.c. Implementar uma função main que, usando as operações cria e insere,
+     gere a árvore da figura abaixo, imprima a árvore, e verificar se os elementos 12 e 88 estão
+     presentes na árvore.
+  */
 	ArvGen* a43 = cria(43);
   ArvGen* a22 = cria(22);
   ArvGen* a21 = cria(21);
@@ -89,11 +95,10 @@ int main()
   imprime(a43);
 
   //Busca elementos 12 e 88
-
   if(busca(a43,12)){
     printf("Elemento 12 presente");
   }else{
-    printf("Elemento nao presente");
+    printf("Elemento 12 nao presente");
   }
   printf("\n");
   

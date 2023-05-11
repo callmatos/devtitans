@@ -80,9 +80,12 @@ void libera (Lista* l)
   }
 }
 
+/**
+ * 1) Baixe o arquivo listas.c e implemente a função "igual", 
+ * que compara duas listas encadeadas e retorna 1 se forem iguais e 0 caso contrário.
+*/
 int igual (Lista* l1, Lista* l2)
 {
-  
   
   //Verifica se as duas listas sao fazias a proximas
   if(l1->prox == NULL && l2->prox == NULL){

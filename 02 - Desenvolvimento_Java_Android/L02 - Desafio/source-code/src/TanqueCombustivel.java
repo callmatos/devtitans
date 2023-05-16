@@ -1,47 +1,25 @@
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class TanqueCombustivel {
 
-    // public double raio, ar;
-    //double pi = ;
-    public TanqueCombustivel() {
-    }
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		var r = sc.nextDouble();
+		var x = sc.nextDouble();
+		var option = sc.nextInt();
+		sc.close();
+		
+		var v = (4.0/3) * Math.PI * Math.pow(r, 3);
+		var c = (Math.PI/3.0) * Math.pow(x, 2) * (3*r - x);
+		
+		if (option == 1) {
+			System.out.println(String.format("%.4f", c));
+		}
+		
+		if (option == 2) {
+			System.out.println(String.format("%.4f", v - c));
+		}
 
-    //HALF_EVEN arredondamento sempre deve acontecer para o valor mais próximo
-    public double formata(double valor) {
-        BigDecimal big = new BigDecimal(valor).setScale(4, RoundingMode.HALF_EVEN);
-        return big.doubleValue();
-    }
+	}
 
-    public double getVolume(int raio) {
-        
-        double r = 4.0/3.0 * Math.PI * Math.pow(raio, 3);
-        return formata(r);
-
-    }
-
-    public double getCalota(int ar, int raio) {
-        double x = (Math.PI / 3 * Math.pow(ar, 2) * (3 * raio - ar));
-        return formata(x);
-
-    }
-
-    public void calculo(int ar, int raio, int tipo) {
-        if (tipo == 1) {
-            System.out.print(getCalota(raio, ar));
-        } else {
-            System.out.printf("%.4f", getVolume(raio));
-        }
-    }
-
-    public static void main(String[] args) {
-        TanqueCombustivel tam = new TanqueCombustivel();
-        Scanner scan = new Scanner(System.in);
-        int volume = scan.nextInt();
-        int ar = scan.nextInt();
-        int tipo = scan.nextInt();
-         tam.calculo(volume, ar, tipo);
-    }
 }
